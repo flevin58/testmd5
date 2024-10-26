@@ -1,9 +1,4 @@
-//use core::str;
-
-extern "C" {
-    // md5 C lib on github: https://github.com/pod32g/MD5.git
-    fn md5(initial_msg: *const u8, initial_len: usize, digest: *mut u8);
-}
+include!("md5_bindings.rs");
 
 pub fn calculate(s: &String) -> Box<String> {
     const MD5_SIZE: usize = 16;
